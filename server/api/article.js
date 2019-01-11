@@ -44,6 +44,7 @@ router.post('/updateArticle',(req,res)=>{
         isPublish,
         id
     } = req.body;
+    
     Article.update({_id:id},{title,content,time,tags:tags.split(','),isPublish})
         .then(result=>{
             console.log(result);
